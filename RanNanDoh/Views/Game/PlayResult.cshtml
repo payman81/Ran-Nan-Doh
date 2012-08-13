@@ -1,0 +1,14 @@
+﻿@model IEnumerable<RanNanDoh.ViewModels.MoveResult>
+
+<h2>Your game results:</h2>
+
+@{int count = 0;}
+@foreach (var result in Model)
+{
+    <h2>Move ++count:</h2>
+    <ol>
+        <li>You played: @result.YourMove.ToString()</li>
+        <li>They played: @result.TheirMove.ToString()</li>
+        <li><b>You @(result.Won ? "WON" : "LOST")</b></li>
+    </ol>
+}
